@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { I18nService } from './i18n.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ssr-starter';
+  constructor(private i18nService: I18nService) { }
 }
