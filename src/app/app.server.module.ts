@@ -11,7 +11,8 @@ export function universalLoader(): TranslateLoader {
   return {
     getTranslation: (lang: string) => {
       return new Observable((observer: Observer<object>) => {
-        observer.next(JSON.parse(readFileSync(`./dist/ssr-starter/browser/assets/i18n/${lang}.json`, 'utf8')));
+        const { defaultProject } = JSON.parse(readFileSync('./angular.json', 'utf8'));
+        observer.next(JSON.parse(readFileSync(`./dist/${defaultProject}/browser/assets/i18n/${lang}.json`, 'utf8')));
         observer.complete();
       });
     }
