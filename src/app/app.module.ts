@@ -6,12 +6,15 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PlatformComponent } from './platform/platform.component';
+import { MetaModule } from '@ngx-meta/core';
 
 export const HttpLoaderFactory = (httpClient: HttpClient) => new TranslateHttpLoader(httpClient);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlatformComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -24,7 +27,8 @@ export const HttpLoaderFactory = (httpClient: HttpClient) => new TranslateHttpLo
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    MetaModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
