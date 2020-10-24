@@ -29,6 +29,20 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
+  server.get('*.js', function(req, res, next) {
+      req.url = `${req.url}.gz`;
+      res.set('Content-Encoding', 'gzip');
+      res.set('Content-Type', 'text/javascript');
+      next();
+  });
+
+  server.get('*.css', function(req, res, next) {
+      req.url = `${req.url}.gz`;
+      res.set('Content-Encoding', 'gzip');
+      res.set('Content-Type', 'text/css');
+      next();
+  });
+
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
