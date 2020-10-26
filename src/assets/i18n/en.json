@@ -1,3 +1,8 @@
 {
+    "app_name": "ssr-starter",
+    "root": {
+        "title": "home page",
+        "app_description": "translated description"
+    },
     "message": "hello world"
 }

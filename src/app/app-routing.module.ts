@@ -12,8 +12,8 @@ const routes: Routes = [{
         component: PlatformComponent,
         data: {
           meta: {
-            title: 'Sweet home',
-            description: 'Home, home sweet home... and what?'
+            title: 'root.title',
+            description: 'root.app_description'
           }
         }
       }
