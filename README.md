@@ -1,6 +1,13 @@
 # SsrStarter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+## Before using
+To rename project, please use `sed` to search and replace `ssr-starter` to a project name.
+
+Please do **NOT** `npm install` otherwise search and replace will return an error.
+
+```bash
+sed -i 's/ssr-starter/[project-name]/g' **/**.(ts|json|js)
+```
 
 ## Development server
 
